@@ -1,0 +1,27 @@
+{
+    "name": "mamyraoby/laravel-proxy",
+    "description": "Better support reverse proxy Laravel deployement",
+    "type": "library",
+    "require": {
+        "illuminate/support": "^11.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "MamyRaoby\\LaravelProxy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mamy Raobelina",
+            "email": "mamyraoby@outlook.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MamyRaoby\\LaravelProxy\\Providers\\ProxyServiceProvider"
+            ]
+        }
+    }
+}
