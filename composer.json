@@ -3,7 +3,8 @@
     "description": "Better support reverse proxy Laravel deployement",
     "type": "library",
     "require": {
-        "illuminate/support": "^11.10"
+        "illuminate/support": "^11.10",
+        "illuminate/http": "^11.10"
     },
     "autoload": {
         "psr-4": {

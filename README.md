@@ -17,6 +17,27 @@ Add `mamyraoby/laravel-proxy` as depenceny of your project, by running the follo
 composer require mamyraoby/laravel-proxy
 ```
 
+Then register this middleware into your application:
+
+### Laravel 11 and above
+Open the `bootstrap/app.php` and add the following line inside the middlewares registration section:
+
+```php
+$middleware->append([
+    \MamyRaoby\LaravelProxy\Middleware\ProxyMiddleware::class,
+]);
+```
+
+### Laravel ancient version
+Open the `app/Http/Kernel.php` and update the `middleware` attrubutes value by adding this line:
+
+```php
+protected $middleware = [
+    \MamyRaoby\LaravelProxy\Middleware\ProxyMiddleware::class,
+];
+```
+
+
 You may set up these **env variables** into your `.env` file:
 
 - `PROXY_SCHEME`:
@@ -27,6 +48,16 @@ You may set up these **env variables** into your `.env` file:
 - `PROXY_URL`:
     
     Accepted value: The **base URL** of the reverse proxy server. Example: *https://example.com*, make sure to include the port if you run from port different form 80 or 443. Default to `APP_URL` env value if not set.
+
+- `PROXY_TRUSTED_IPS`:
+
+    A set of trusted proxies IP address, separated by comma.
+
+    Example: `PROXY_TRUSTED_IPS=172.1.0.0,192.168.1.1`
+    
+    Default to `*` if not set, which means always trust everything.
+
+    Unset this variable if your server has dynamic IP address or in case you don't know exactly the IP addresses for your server.
 
 
 

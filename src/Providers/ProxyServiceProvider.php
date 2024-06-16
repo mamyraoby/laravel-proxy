@@ -6,11 +6,13 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use MamyRaoby\LaravelProxy\Middleware\ProxyMiddleware;
 
 class ProxyServiceProvider extends ServiceProvider
 {
     public function register(): void {
         $this->mergeConfigFrom( __DIR__ . '/../../config/proxy.php', 'proxy');
+        $this->app['router']->aliasMiddleware('mamyraoby-laravel-proxy-middlweware', ProxyMiddleware::class);
     }
 
     public function boot(): void {
