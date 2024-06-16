@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Config;
 
-require_once __DIR__ . '/../helpers/proxy.php';
-
 return [
     'scheme' => env('PROXY_SCHEME', 'http'),
     'url' => env('PROXY_URL', Config::get('app.url')),
