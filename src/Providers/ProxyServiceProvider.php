@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
-use MamyRaoby\LaravelProxy\Middleware\ProxyMiddleware;
 
 class ProxyServiceProvider extends ServiceProvider
 {
