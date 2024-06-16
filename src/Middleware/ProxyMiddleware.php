@@ -20,6 +20,10 @@ class ProxyMiddleware extends TrustProxies {
                          
     public function __construct()
     {
-        $this->proxies = Config::get('proxy.trusted_ips', ['*']);
+        $proxies = Config::get('proxy.trusted_ips', ['*']);
+
+        $this->proxies = count($proxies) === 1
+            ? '*'
+            : $proxies;
     }
 }

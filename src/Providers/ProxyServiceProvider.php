@@ -12,7 +12,6 @@ class ProxyServiceProvider extends ServiceProvider
 {
     public function register(): void {
         $this->mergeConfigFrom( __DIR__ . '/../../config/proxy.php', 'proxy');
-        $this->app['router']->aliasMiddleware('mamyraoby-laravel-proxy-middlweware', ProxyMiddleware::class);
     }
 
     public function boot(): void {
