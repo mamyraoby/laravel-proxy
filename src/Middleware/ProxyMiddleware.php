@@ -12,7 +12,7 @@ class ProxyMiddleware extends TrustProxies {
         $proxies = Config::get('proxy.trusted_ips', ['*']);
 
         $this->proxies = count($proxies) === 1
-            ? '*'
+            ? $proxies[0]
             : $proxies;
     }
 }
